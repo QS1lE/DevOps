@@ -1,0 +1,15 @@
+---
+- name: install nginx with virtual hosts
+  hosts: localhost
+  remote_user: ruslan
+  become: true
+  become_method: sudo
+  gather_facts: no
+
+- vars: 
+    sites: 
+    - "vk.com"
+    - "student.psu.ru"
+    - "google.com"
+
+- roles: nginx-roles
